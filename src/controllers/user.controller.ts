@@ -11,8 +11,8 @@ export class UsersController {
     }
 
     static async getUserById (req: Request, res: Response) {
-        const id = req.params.id;
-        User.findById(id).then((result)=>{
+        const userId = req.params.userId;
+        User.findById(userId).then((result)=>{
             if (!result) return res.status(404).json({ message: 'User not found' });
             return res.status(200).json(result);
         }).catch(err => {
@@ -39,7 +39,8 @@ export class UsersController {
     }
 
     static async updateUser(req: Request, res: Response) {
-        User.findByIdAndUpdate(req.params.id, req.body, { new: true }).then(result =>{
+        const userId = req.params.userId;
+        User.findByIdAndUpdate(userId, req.body, { new: true }).then(result =>{
             if (!result) return res.status(404).json({ message: 'User not found'});
             return res.status(200).json(result);
         }).catch(err =>{
@@ -48,7 +49,8 @@ export class UsersController {
     }
 
     static async deleteUser(req: Request, res: Response)  {
-        User.findByIdAndDelete(req.params.id).then(result =>{
+        const userId = req.params.userId;
+        User.findByIdAndDelete(userId).then(result =>{
             if (!result) return res.status(404).json({ message: 'User not found'});
             return res.status(200).json({ message: 'User deleted successfully' });
         }).catch(err =>{

@@ -6,16 +6,16 @@ const router = Router();
 // Obtener todos los usuarios
 router.get('/', UsersController.getAllUsers);
 
-// Obtener un usuario por ID
-router.get('/:id', UsersController.getUserById);
+// Obtener un usuario por userId
+router.get('/:userId', UsersController.getUserById);
 
 // Crear un nuevo usuario
 router.post('/', UsersController.createUser);
 
 // Actualizar un usuario
-router.put('/:id', UsersController.updateUser);
+router.put('/:userId', UsersController.updateUser);
 
 // Eliminar un usuario
-router.delete('/:id', UsersController.deleteUser);
+router.delete('/:userId', UsersController.deleteUser);
 
 export default router;
