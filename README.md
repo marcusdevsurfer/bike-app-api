@@ -7,3 +7,8 @@ Creamos nuestro .env ya que es necesario para el funcionamiento de nuestra api, 
 
 # ejecutar
 npm run dev
+
+
+se supone que esta en prod aqui: bike-app-api.onrender.com/
+
+chequen bajo su propio riesgo
