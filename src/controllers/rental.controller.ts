@@ -24,7 +24,7 @@ export class RentalController {
 
     static async createRental(req: Request, res: Response) {
         const rental = new Rental({
-            user: req.body.use,
+            user: req.body.user,
             bike: req.body.bike,
             rentalStartTime: req.body.rentalStartTime,
             stationStart: req.body.stationStart,

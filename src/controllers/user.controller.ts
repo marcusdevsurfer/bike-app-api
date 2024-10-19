@@ -27,6 +27,7 @@ export class UsersController {
             name: req.body.name,
             email: req.body.email,
             phone: req.body.phone,
+            role : req.body.role,
             password: req.body.password,
             membershipStatus: req.body.membershipStatus,
         });
