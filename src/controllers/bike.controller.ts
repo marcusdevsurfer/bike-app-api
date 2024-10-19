@@ -9,6 +9,14 @@ export class BikesController {
             return res.status(500).json({ message: err.message });
         });
     }
+    
+    static async getAllBikesByStationId(req: Request, res: Response) {
+        Bike.find({station:req.params.stationId}).then((result)=>{
+            return res.json(result);
+        }).catch((err)=>{
+            return res.status(500).json({ message: err.message });
+        });
+    }
 
     static async getBikeById (req: Request, res: Response) {
         const bikeId = req.params.bikeId;

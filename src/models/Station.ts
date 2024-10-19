@@ -9,11 +9,7 @@ const stationSchema = new Schema({
     location: {
         type: String, // "Point"
         required: true
-    },
-    bikesAvailable: [{
-      type: Schema.Types.ObjectId,
-      ref: 'Bike'
-    }]
+    }
   });
   
 export default mongoose.model('Station', stationSchema);

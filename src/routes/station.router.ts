@@ -1,11 +1,12 @@
 import { Router } from 'express';
 import { StationsController } from '../controllers/station.controller';
+import { BikesController } from '../controllers/bike.controller';
 
 const router = Router();
 
 // Obtener todos los usuarios
 router.get('/', StationsController.getAllStations);
-
+router.get('/:stationId/bikes', BikesController.getAllBikesByStationId);
 // Obtener un usuario por ID
 router.get('/:stationId', StationsController.getStationById);
 // router.post('/:stationId/maintenance', UsersController.getUserById);
