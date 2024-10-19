@@ -4,7 +4,8 @@ import connectDB from './config/db';
 dotenv.config();
 const port = process.env.APP_PORT || 3000;
 
-connectDB();
-app.listen(port, () => {
+
+app.listen(port, async () => {
+    await connectDB();
     console.log(`Server running at port: ${port}`);
   });
